@@ -20,6 +20,23 @@ spec:
           paths:
             path: '/'
             pathType: 'Prefix'
+    general-insurance:
+      repoURL: https://github.com/PeculiarGideon/gi.git
+      targetRevision: main
+      path: kubernetes/helm/ecsdemo-frontend
+      ingress:
+        enabled: 'true'
+        className: 'alb'
+        annotations:
+          'alb.ingress.kubernetes.io/group.name': 'gi'
+          'alb.ingress.kubernetes.io/scheme': 'internet-facing'
+          'alb.ingress.kubernetes.io/target-type': 'ip'
+          'external-dns.alpha.kubernetes.io/set-identifier': 'eks-blueprint-blue'
+        hosts:
+          host: test.example.com
+          paths:
+            path: '/hello'
+            pathType: 'Prefix'        
     ecsdemoNodejs:
       repoURL: https://github.com/aws-containers/ecsdemo-nodejs.git
       targetRevision: main
