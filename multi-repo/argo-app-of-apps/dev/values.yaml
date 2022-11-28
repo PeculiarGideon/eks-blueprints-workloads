@@ -39,7 +39,7 @@ spec:
           - paths:
               - path: /hello
                 pathType: Prefix               
-     ecsdemoNodejs:
+    ecsdemoNodejs:
       repoURL: https://github.com/aws-containers/ecsdemo-nodejs.git      
       #repoURL: git@github.com:aws-containers/ecsdemo-nodejs.git
       targetRevision: main
